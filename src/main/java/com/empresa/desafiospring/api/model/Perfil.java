@@ -8,14 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.*;
 
+@Data
+@Builder
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "perfis")
 public class Perfil implements Serializable{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -16478933476804026L;
 
 	@Id
@@ -29,40 +33,6 @@ public class Perfil implements Serializable{
 	@Column(name = "desc_perfil", nullable = false, length = 255)
 	private String desc;
 	
-	public Perfil() {
-	}
-	
 
-	public Perfil(Long idPerfil, String nome, String desc) {
-		super();
-		this.idPerfil = idPerfil;
-		this.nome = nome;
-		this.desc = desc;
-	}
-
-
-	public Long getIdPerfil() {
-		return idPerfil;
-	}
-
-	public void setIdPerfil(Long idPerfil) {
-		this.idPerfil = idPerfil;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
 	
 }

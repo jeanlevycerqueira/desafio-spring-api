@@ -13,9 +13,9 @@ public interface IPerfilService {
 	 * @param profile
 	 * @return Profile
 	 */
-//	public Perfil persist(Perfil perfil);
-//	
-//	public Optional<Perfil> findById(Long id);
+	public Perfil save(Perfil perfil);
+	
+	public Optional<Perfil> findById(Long id);
 	
 	
 }

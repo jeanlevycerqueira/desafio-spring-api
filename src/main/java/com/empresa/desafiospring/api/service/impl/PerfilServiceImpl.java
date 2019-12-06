@@ -17,29 +17,17 @@ public class PerfilServiceImpl implements IPerfilService{
 	private static final Logger log = LoggerFactory.getLogger(PerfilServiceImpl.class);
 	
 	@Autowired
-	private IPerfilRepository profileRepository;
+	private IPerfilRepository perfilRepository;
 
-//	@Override
-//	public Perfil persist(Perfil perfil) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Optional<Perfil> findById(Long id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	@Override
+	public Perfil save(Perfil perfil) {
+		log.info("Cadastrando Perfil: {}", perfil);
+		return this.perfilRepository.save(perfil);
+	}
 
-//	@Override
-//	public Profile persist(Profile profile) {
-//		log.info("Persisting Profile: {}", profile);
-//		return this.profileRepository.save(profile);
-//	}
-//
-//	@Override
-//	public Optional<Profile> findById(Long id) {
-//		return this.profileRepository.findById(id);
-//	}
+	@Override
+	public Optional<Perfil> findById(Long id) {
+		return this.perfilRepository.findById(id);
+	}
 
 }

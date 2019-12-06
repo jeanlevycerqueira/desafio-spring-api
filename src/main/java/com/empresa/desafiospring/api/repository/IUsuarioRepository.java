@@ -28,7 +28,7 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	List<Usuario> findByPerfil(@Param("perfil") Perfil findByPerfil);
 	
-	List<Usuario> findByCargo(@Param("cargo") Cargo findByCargo);
+	List<Usuario> findByCargo(@Param("cargo") Cargo cargo);
 	
 	public Optional<Usuario> findByNome(String nome);
 	
