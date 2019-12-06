@@ -25,7 +25,7 @@ public class Cargo implements Serializable{
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "cargo_id")
+	@Column(name = "id_cargo")
 	private Long id;
 	
 	@Column(name = "nome_cargo", nullable = false,length = 100)
