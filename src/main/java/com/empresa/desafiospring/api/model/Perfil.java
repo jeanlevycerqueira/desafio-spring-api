@@ -9,11 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
 @Entity
 @Table(name = "perfis")
 public class Perfil implements Serializable{
@@ -33,7 +28,41 @@ public class Perfil implements Serializable{
 	
 	@Column(name = "desc_perfil", nullable = false, length = 255)
 	private String desc;
-
 	
+	public Perfil() {
+	}
+	
+
+	public Perfil(Long idPerfil, String nome, String desc) {
+		super();
+		this.idPerfil = idPerfil;
+		this.nome = nome;
+		this.desc = desc;
+	}
+
+
+	public Long getIdPerfil() {
+		return idPerfil;
+	}
+
+	public void setIdPerfil(Long idPerfil) {
+		this.idPerfil = idPerfil;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 	
 }
