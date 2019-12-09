@@ -1,16 +1,18 @@
 package com.empresa.desafiospring.api.dto;
 
-import lombok.Data;
-import lombok.ToString;
+import java.util.UUID;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+import lombok.ToString;
 
 @Data
 @ToString
 public class CargoDTO {
 
-			
+	    private UUID uuid;	
 		private Long codigo;
 
 	    @NotNull(message = "{validacao.in.nome.not.null}")

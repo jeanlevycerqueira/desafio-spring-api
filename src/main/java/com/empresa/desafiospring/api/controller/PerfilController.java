@@ -1,6 +1,5 @@
 package com.empresa.desafiospring.api.controller;
 
-import java.security.NoSuchAlgorithmException;
 
 import javax.validation.Valid;
 
@@ -19,48 +18,39 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.empresa.desafiospring.api.converter.CargoConverter;
-
-import com.empresa.desafiospring.api.dto.CargoDTO;
-import com.empresa.desafiospring.api.model.Cargo;
-import com.empresa.desafiospring.api.response.Response;
-import com.empresa.desafiospring.api.service.ICargoService;
-import com.github.dozermapper.core.DozerConverter;
+import com.empresa.desafiospring.api.converter.PerfilConverter;
+import com.empresa.desafiospring.api.dto.PerfilDTO;
+import com.empresa.desafiospring.api.model.Perfil;
+import com.empresa.desafiospring.api.service.IPerfilService;
 
 @RestController
 @CrossOrigin(origins = "*")
 @SuppressWarnings("unchecked")
-public class CargoController extends ApiController{
+public class PerfilController extends ApiController{
 	
-	private static final Logger log = LoggerFactory.getLogger(CargoController.class);
+	private static final Logger log = LoggerFactory.getLogger(PerfilController.class);
 	
 	@Autowired
-	private ICargoService cargoService;
+	private IPerfilService perfilService;
 	@Autowired
-	private CargoConverter cargoConverter;
-	
-	Cargo cargo = new Cargo();
+	private PerfilConverter perfilConverter;
 	
 	
 	@GetMapping(path = "/search")
-    public ResponseEntity<Cargo> findById(@RequestParam(value="codigo") Long cod) {
+    public ResponseEntity<Perfil> findById(@RequestParam(value="codigo") Long cod) {
  
-        return ok(cargoService.findById(cod), cargoConverter);
+        return ok(perfilService.findById(cod), perfilConverter);
 
     }
 	
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<CargoDTO> save(@RequestBody @Valid CargoDTO cargoDTO,
+    public ResponseEntity<PerfilDTO> save(@RequestBody @Valid PerfilDTO perfilDTO,
 			BindingResult result) {
 
-        return created(cargoService.save(cargoConverter.apply(cargoDTO)), cargoConverter);  
+        return created(perfilService.save(perfilConverter.apply(perfilDTO)), perfilConverter);  
 
     }
-
-	
-	
-	
 	
 
 }

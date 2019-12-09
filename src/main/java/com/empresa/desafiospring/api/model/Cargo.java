@@ -1,13 +1,21 @@
 package com.empresa.desafiospring.api.model;
 
-import java.io.Serializable;
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.*;
+
+import com.empresa.desafiospring.api.util.Codded;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 
@@ -18,7 +26,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cargo implements Serializable{
+public class Cargo implements Codded {
 
 	private static final long serialVersionUID = -2286770971354216272L;
 

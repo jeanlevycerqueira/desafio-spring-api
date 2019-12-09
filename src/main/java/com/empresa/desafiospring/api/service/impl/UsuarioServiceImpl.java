@@ -22,56 +22,37 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	
 	@Autowired
 	private IUsuarioRepository usuarioRepository;
-	
-//public Usuario save(Usuario user);
-//	
-//	public void delete(Long id);
-//	
-//	public List<Usuario> listAll();
-//	
-//	List<Usuario> findByPerfilId(@Param("idPerfil") Long findByPerfilId);
-//	
-//	List<Usuario> findByCargoId(@Param("id") Long id);
-//	
-//	public Optional<Usuario> findByNome(String nome);
-//	
-//	public Optional<Usuario> findByCpf(String cpf);
-//
-//	public void inativar(TipoSexo tipoSexo, Long id);
-	
+		
 	@Override
 	public Usuario save(Usuario usuario) {
 		log.info("Cadastrando Usuario: {}", usuario);
 		return this.usuarioRepository.save(usuario);
 	}
-//TODO:IMPLEMENTAR O METODO NA CLASSE GENERICA.
-	/*
-	 * @Override public void inativar(♦ id) {
-	 * log.info("Desabilitando CODIGO: {}", id);
-	 * this.usuarioRepository.inativar(id); }
-	 */
+
+	
+	@Override
+	public void inativar(TipoStatus tipoStatus, Long id) {
+		this.usuarioRepository.inativar(tipoStatus, id);
+	} 
 
 	@Override
 	public void delete(Long id) {
-		log.info("Removing UserId: {}", id);
 		this.usuarioRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Usuario> listAll() {
-		return null; //this.usuarioRepository.listAll();
+		return this.usuarioRepository.findAll();
 	}
 
 	@Override
-	public List<Usuario> findByPerfil(Perfil perfil) {
-		return this.usuarioRepository.findByPerfil(perfil);
+	public List<Usuario> findByPerfil(Long id) {
+		return this.usuarioRepository.findByPerfil(id);
 	}
 
-	
-
-	@Override
-	public List<Usuario> findByCargo(Cargo cargo) {
-		return this.usuarioRepository.findByCargo(cargo);
+		@Override
+	public List<Usuario> findByCargo(Long id) {
+		return this.usuarioRepository.findByCargo(id);
 	}
 
 	@Override
@@ -82,6 +63,18 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	@Override
 	public Optional<Usuario> findByCpf(String cpf) {
 		return this.usuarioRepository.findByCpf(cpf);
+	}
+
+	@Override
+	public List<Usuario> findByPerfil(Perfil perfil) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Usuario> findByCargo(Cargo cargo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

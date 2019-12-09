@@ -21,7 +21,7 @@ public class CargoServiceImpl implements ICargoService{
 
 	@Override
 	public Cargo save(Cargo cargo) {
-		log.info("Cadastrando Cargo: {}", cargo);
+		log.info("Cadastrando Cargo:", cargo);
 		return this.cargoRepository.save(cargo);
 	}
 

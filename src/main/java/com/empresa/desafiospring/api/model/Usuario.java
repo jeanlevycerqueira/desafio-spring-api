@@ -2,6 +2,8 @@ package com.empresa.desafiospring.api.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Optional;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import com.empresa.desafiospring.api.enums.TipoSexo;
 import com.empresa.desafiospring.api.enums.TipoStatus;
+import com.empresa.desafiospring.api.util.Codded;
+
 import lombok.*;
 
 @Data
@@ -21,14 +25,14 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "usuarios")
-public class Usuario implements Serializable{
+public class Usuario implements Codded{
 
 	private static final long serialVersionUID = -5111043654037655903L;
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id_usuario")
-	private Long idUsuario;
+	private Long id;
 	
 	@Column(name = "nome_usuario", nullable = false, length = 255)
 	private String nome;
@@ -52,6 +56,8 @@ public class Usuario implements Serializable{
 	
 	@Column(name = "status_usuario", nullable = false)
 	private TipoStatus status;
+
+	
 	
 		
 }

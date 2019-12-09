@@ -2,7 +2,7 @@ package com.empresa.desafiospring.api.enums;
 
 public enum TipoSexo {
 	
-	MMASCULINO("m"),
+	MASCULINO("m"),
 	FEMININO("f");
 	
 	private final String desc;

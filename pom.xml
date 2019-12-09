@@ -43,6 +43,7 @@
 			<optional>true</optional>
 		</dependency>
 		
+		
 		<!-- JPA, MySQL, JDBC e H2 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

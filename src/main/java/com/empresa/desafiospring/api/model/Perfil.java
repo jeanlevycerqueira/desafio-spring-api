@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.empresa.desafiospring.api.util.Codded;
+
 import lombok.*;
 
 @Data
@@ -17,7 +20,7 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "perfis")
-public class Perfil implements Serializable{
+public class Perfil implements Codded{
 
 	
 	private static final long serialVersionUID = -16478933476804026L;
@@ -25,13 +28,15 @@ public class Perfil implements Serializable{
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id_perfil")
-	private Long idPerfil;
+	private Long id;
 	
 	@Column(name = "nome_perfil", nullable = false, length = 100)
 	private String nome;
 	
 	@Column(name = "desc_perfil", nullable = false, length = 255)
 	private String desc;
+
+	
 	
 
 	

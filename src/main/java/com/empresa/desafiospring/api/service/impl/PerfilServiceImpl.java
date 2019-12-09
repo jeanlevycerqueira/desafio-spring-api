@@ -21,7 +21,7 @@ public class PerfilServiceImpl implements IPerfilService{
 
 	@Override
 	public Perfil save(Perfil perfil) {
-		log.info("Cadastrando Perfil: {}", perfil);
+		log.info("Cadastrando Perfil:", perfil);
 		return this.perfilRepository.save(perfil);
 	}
 
